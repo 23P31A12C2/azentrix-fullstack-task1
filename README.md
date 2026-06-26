@@ -155,18 +155,35 @@ The application follows a simple client-server architecture.
 
 # Screenshots
 
-Include screenshots demonstrating:
+## Login Page
+![Login Page](screenshots/login%20page.png)
 
-* Login Page
-* 
-* Registration Page
-* Dashboard
-* Add Transaction
-* Transactions List
-* Edit Transaction
-* Delete Confirmation
-* Filter Functionality
-* Pagination
+## Registration Page
+![Registration Page](screenshots/register%20page.png)
+
+## Dashboard
+![Dashboard](screenshots/dashboard%20page.png)
+
+## Dashboard Summary
+![Dashboard Summary](screenshots/dashboard%202.png)
+
+## Add Transaction
+![Add Transaction](screenshots/add%20transaction.png)
+
+## Transactions List
+![Transactions List](screenshots/Transactions%20page.png)
+
+## Edit Transaction
+![Edit Transaction](screenshots/edit%20transaction.png)
+
+## Delete Confirmation
+![Delete Confirmation](screenshots/delete%20transaction.png)
+
+## Filter Functionality
+![Filter Functionality](screenshots/Transactions%20page.png)
+
+## Pagination
+![Pagination](screenshots/Transactions%20page.png)
 
 ---
 
