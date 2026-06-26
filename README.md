@@ -161,17 +161,17 @@ The application follows a simple client-server architecture.
 ## Registration Page
 ![Registration Page](screenshots/register%20page.png)
 
-## Dashboard
+## Dashboard Page with Pie
 ![Dashboard](screenshots/dashboard%20page.png)
 
-## Dashboard Summary
+## Dashboard Page with Bar
 ![Dashboard Summary](screenshots/dashboard%202.png)
-
-## Add Transaction
-![Add Transaction](screenshots/add%20transaction.png)
 
 ## Transactions List
 ![Transactions List](screenshots/Transactions%20page.png)
+
+## Add Transaction
+![Add Transaction](screenshots/add%20transaction.png)
 
 ## Edit Transaction
 ![Edit Transaction](screenshots/edit%20transaction.png)
@@ -179,11 +179,12 @@ The application follows a simple client-server architecture.
 ## Delete Confirmation
 ![Delete Confirmation](screenshots/delete%20transaction.png)
 
-## Filter Functionality
+## Filter Functionality && Pagination
 ![Filter Functionality](screenshots/Transactions%20page.png)
 
-## Pagination
-![Pagination](screenshots/Transactions%20page.png)
+# Demo Video
+
+[▶️ Download/Watch Demo](demo/budget-tracker-demo.mp4)
 
 ---
 
