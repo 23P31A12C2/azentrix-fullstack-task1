@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>My Transactions</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+
+<div class="sidebar">
+
+    <div>
+
+        <div class="logo-section">
+
+            <div class="logo-icon">
+                💰
+            </div>
+
+            <div>
+
+                <h2>Budget Tracker</h2>
+
+                <span>
+                    Personal Finance
+                </span>
+
+            </div>
+
+        </div>
+
+        <ul class="menu">
+
+            <li onclick="location.href='dashboard.html'">
+
+                <span>📊</span>
+
+                Dashboard
+
+            </li>
+
+            <li class="active">
+
+                <span>💳</span>
+
+                My Transactions
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="user-profile">
+
+    <div class="user-info">
+
+        <div
+    class="avatar"
+    id="userAvatar">
+
+    U
+
+</div>
+
+<div class="user-details">
+
+    <span
+        class="user-name"
+        id="userName">
+
+        User
+
+    </span>
+
+    <span class="user-role">
+        User
+    </span>
+
+</div>
+
+    </div>
+
+    <div class="menu-wrapper">
+
+        <button
+            class="menu-btn"
+            onclick="toggleMenu()">
+
+            ⋮
+
+        </button>
+
+        <div
+    id="profileMenu"
+    class="profile-menu">
+
+    <div
+        class="menu-item"
+        onclick="logout()">
+
+        🚪 Logout
+
+    </div>
+
+</div>
+
+    </div>
+
+</div>
+
+</div>
+
+    <div class="main-content">
+
+        <div class="transactions-header">
+
+            <h1>
+                My Transactions
+            </h1>
+
+            <button
+                class="add-btn"
+                onclick="addTransaction()">
+
+                + Add Transaction
+
+            </button>
+
+        </div>
+
+        <!-- Filters -->
+
+        <div class="filter-container">
+
+    <div class="filter-item">
+        <label>Transaction Type</label>
+        <select id="typeFilter">
+            <option value="">All Types</option>
+            <option value="INCOME">Income</option>
+            <option value="EXPENSE">Expense</option>
+        </select>
+    </div>
+
+    <div class="filter-item">
+        <label>Date</label>
+        <input type="date" id="dateFilter">
+    </div>
+
+    <div class="filter-item">
+        <label>Amount</label>
+        <input
+            type="number"
+            id="amountFilter"
+            placeholder="Enter amount">
+    </div>
+
+    <button
+        class="apply-btn"
+        onclick="loadTransactions()">
+        Apply Filters
+    </button>
+
+</div>
+
+        <!-- Table -->
+
+<div class="table-container">
+
+    <table id="transactionTable">
+
+        <thead>
+
+            <tr>
+
+                <th>Title</th>
+
+                <th>Type</th>
+
+                <th>Category</th>
+
+                <th>Amount</th>
+
+                <th>Date</th>
+
+                <th>Payment</th>
+
+                <th>Merchant</th>
+
+                <th>Description</th>
+
+                <th>Status</th>
+
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        </tbody>
+
+    </table>
+    <div id="pagination" class="pagination"></div>
+
+</div>
+
+    </div>
+
+</div>
+
+<!-- Modal -->
+
+<div id="transactionModal" class="modal">
+
+    <div class="modal-card">
+
+        <div class="modal-header">
+
+            <h2 id="modalTitle">
+                Add Transaction
+            </h2>
+
+            <span
+                class="close-modal"
+                onclick="closeModal()">
+
+                ✕
+
+            </span>
+
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>
+                    Transaction Title
+                </label>
+
+                <input
+                    id="title"
+                    type="text"
+                    placeholder="Enter transaction title">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Category
+                </label>
+
+                <input
+                    id="category"
+                    type="text"
+                    placeholder="Food, Salary, Shopping etc">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Transaction Type
+                </label>
+
+                <select id="transactionType">
+
+                    <option value="INCOME">
+                        Income
+                    </option>
+
+                    <option value="EXPENSE">
+                        Expense
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Amount
+                </label>
+
+                <input
+                    id="amount"
+                    type="number"
+                    placeholder="Enter amount">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Transaction Date
+                </label>
+
+                <input
+                    id="transactionDate"
+                    type="date">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Payment Method
+                </label>
+
+                <select id="paymentMethod">
+
+                    <option value="">
+                        Select Method
+                    </option>
+
+                    <option value="Cash">
+                        Cash
+                    </option>
+
+                    <option value="UPI">
+                        UPI
+                    </option>
+
+                    <option value="Card">
+                        Card
+                    </option>
+
+                    <option value="Net Banking">
+                        Net Banking
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Merchant / Vendor
+                </label>
+
+                <input
+                    id="merchant"
+                    type="text"
+                    placeholder="Merchant Name">
+
+            </div>
+
+        </div>
+
+        <div class="form-group full-width">
+
+            <label>
+                Description
+            </label>
+
+            <textarea
+                id="description"
+                placeholder="Enter description">
+            </textarea>
+
+        </div>
+
+        <div class="modal-footer">
+
+            <button
+                class="cancel-btn"
+                onclick="closeModal()">
+
+                Cancel
+
+            </button>
+
+            <button
+                class="save-btn"
+                onclick="saveTransaction()">
+
+                Save Transaction
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/transactions.js"></script>
+
+</body>
+</html>

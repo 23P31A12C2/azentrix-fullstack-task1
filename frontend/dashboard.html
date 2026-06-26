@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Budget Tracker Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+
+
+<div class="sidebar">
+
+    <div>
+
+        <div class="logo-section">
+
+            <div class="logo-icon">
+                💰
+            </div>
+
+            <div>
+
+                <h2>Budget Tracker</h2>
+
+                <span>
+                    Personal Finance
+                </span>
+
+            </div>
+
+        </div>
+
+        <ul class="menu">
+
+            <li class="active">
+
+                <span>📊</span>
+
+                Dashboard
+
+            </li>
+
+            <li onclick="location.href='transactions.html'">
+
+                <span>💳</span>
+
+                My Transactions
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="user-profile">
+
+    <div class="user-info">
+
+        <div
+    class="avatar"
+    id="userAvatar">
+
+    U
+
+</div>
+
+<div class="user-details">
+
+    <span
+        class="user-name"
+        id="userName">
+
+        User
+
+    </span>
+
+    <span class="user-role">
+        User
+    </span>
+
+</div>
+
+    </div>
+
+    <div class="menu-wrapper">
+
+        <button
+            class="menu-btn"
+            onclick="toggleMenu()">
+
+            ⋮
+
+        </button>
+
+        <div
+    id="profileMenu"
+    class="profile-menu">
+
+    <div
+        class="menu-item"
+        onclick="logout()">
+
+        🚪 Logout
+
+    </div>
+
+</div>
+
+    </div>
+
+</div>
+
+</div>
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+
+        <div class="topbar">
+
+            <h1>
+                Dashboard
+            </h1>
+
+            <div class="dashboard-filters">
+
+    <div class="radio-group">
+
+        <label>
+            <input
+                type="radio"
+                name="period"
+                value="monthly"
+                checked>
+            Monthly
+        </label>
+
+        <label>
+            <input
+                type="radio"
+                name="period"
+                value="weekly">
+            Weekly
+        </label>
+
+    </div>
+
+    <div class="radio-group">
+
+        <label>
+            <input
+                type="radio"
+                name="chart"
+                value="pie"
+                checked>
+            Pie
+        </label>
+
+        <label>
+            <input
+                type="radio"
+                name="chart"
+                value="bar">
+            Bar
+        </label>
+
+    </div>
+
+</div>
+
+        </div>
+
+        <!-- Summary Cards -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Total Income</h3>
+
+                <h2 id="incomeCard">
+                    ₹0
+                </h2>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Total Expense</h3>
+
+                <h2 id="expenseCard">
+                    ₹0
+                </h2>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Balance</h3>
+
+                <h2 id="balanceCard">
+                    ₹0
+                </h2>
+
+            </div>
+
+        </div>
+
+        <!-- Chart -->
+
+        <div class="chart-container">
+
+            <canvas id="summaryChart"></canvas>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>
