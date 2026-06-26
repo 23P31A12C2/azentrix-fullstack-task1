@@ -182,11 +182,11 @@ The application follows a simple client-server architecture.
 ## Filter Functionality && Pagination
 ![Filter Functionality](screenshots/Transactions%20page.png)
 
-## Demo
+# Demo Video
 
-Click below to view the complete application demo.
+🎥 **Loom Demo**
 
-[🎥 Budget Tracker Demo](demo/budget-tracker-demo.mp4)
+https://www.loom.com/share/f6a3d70151284973b5516962683bceb5
 
 ---
 
